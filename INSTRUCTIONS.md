@@ -19,21 +19,30 @@ Create an application that records employee salaries and adds salaries up to rep
     [x]  make h2 for "Add Employees"
     [x]  make h2 for "Employees"
     [x]  make a table 
-    []  
+    [x] create a button called 'Submit'
+    [x] commit
 
+3)  1st round of JS stuff
+    [x] collect the form information
+    [] store info to calculate monthly costs
+    [] append information to the DOM
+    [] clear the input fields
+    [] commit
 
-3) create a button called 'Submit' that
-    [] collect the form information
-    []
-    []
-    []
-    []
-    []
+4)  2nd round of JS stuff - Using stored information
+    [] calculate monthly costs
+    [] append this to the to DOM
+    [] commit
 
+5) 3rd round of JS stuff 
+    []If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
+    [] Create a delete button that removes an employee from the DOM.
+    [] commit
 
-
-
-
+6) Stretch Goals
+    [] CSS- Add styling or extra functionality that fits with the theme of this assignment.
+    [] JS - Once the employee is deleted, update the _Total Monthly Cost_ section on the page to reflect the employee's removal. (SEE HINT BELOW)
+    [] commit
 
 ## Assignment
 
