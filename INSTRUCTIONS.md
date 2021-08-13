@@ -5,6 +5,36 @@ Create an application that records employee salaries and adds salaries up to rep
 - JavaScript
 - jQuery - Selectors, append, and event handling
 
+
+## Order of Operations:
+1) create an input form for an employee's 
+    [x] first name
+    [x] last name
+    [x] ID number
+    [x] job title
+    [x]  annual salary
+
+2) do all the html stuff 
+    [x]  make h1 for "Salary Calculator"
+    [x]  make h2 for "Add Employees"
+    [x]  make h2 for "Employees"
+    [x]  make a table 
+    []  
+
+
+3) create a button called 'Submit' that
+    [] collect the form information
+    []
+    []
+    []
+    []
+    []
+
+
+
+
+
+
 ## Assignment
 
 The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_.
