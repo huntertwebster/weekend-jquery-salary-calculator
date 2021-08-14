@@ -38,7 +38,7 @@ $().ready(function () {
             employees[i].lastName,
             employees[i].idNumber,
             employees[i].jobTitle,
-            employees[i].annualSalary,
+            Number(employees[i].annualSalary),
         );
     }
 
@@ -80,7 +80,7 @@ $().ready(function () {
         const lastName = $('#last-name').val();
         const idNumber = $('#ID-Number').val();
         const jobTitle = $('#job-title').val();
-        const annualSalary = $('#annual-salary').val();
+        const annualSalary = Number($('#annual-salary').val());
 
         // use the exsisting function to push fields into employee array
         addRow(
@@ -88,10 +88,10 @@ $().ready(function () {
             lastName,
             idNumber,
             jobTitle,
-            annualSalary
+            Number(annualSalary)
         );
 
-            // empty the values
+        // empty the values
         $('#first-name').val('');
         $('#last-name').val('');
         $('#ID-Number').val('');
@@ -104,14 +104,27 @@ $().ready(function () {
             lastName: lastName,
             idNumber: idNumber,
             jobTitle: jobTitle,
-            annualSalary: Number(annualSalary)
+            annualSalary: Number(annualSalary),
 
             // some function that calcutates the salary + employee salary
 
             
         });
+
+        
+        
     });
+
+
+    
 });
+
+
+
+
+
+
+
 
 //function to add up annual salary to = total salary 
 
@@ -131,3 +144,22 @@ $().ready(function () {
 
 // //     for (let i = 0; i < employees.length)
 // // }
+let totalMonthly = 0;
+function addMonthly() {
+    
+    for (let i = 0; i < employees.length; i++) {
+    totalMonthly += Number(employees[i].annualSalary) / 12;
+    }
+    console.log(Math.ceil(totalMonthly * 100) )
+}//end for loop
+
+console.log(totalMonthly + 100); // test
+let monthlyDisplay = $('#totalSpan');
+monthlyDisplay.empty(totalMonthly);
+monthlyDisplay.append(totalMonthly);
+
+
+if (totalMonthly > 20000) {
+    $('#totalSpan').css('background-color', 'red');
+}
+
