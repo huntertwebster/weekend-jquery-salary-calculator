@@ -24,10 +24,10 @@ Create an application that records employee salaries and adds salaries up to rep
 
 3)  1st round of JS stuff
     [x] collect the form information
-    [] store info to calculate monthly costs
-    [] append information to the DOM
-    [] clear the input fields
-    [] commit
+    [x] store info to calculate monthly costs
+    [x] append information to the DOM
+    [x] clear the input fields
+    [x] commit
 
 4)  2nd round of JS stuff - Using stored information
     [] calculate monthly costs

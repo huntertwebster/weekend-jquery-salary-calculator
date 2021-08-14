@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Open+Sans:wght@300&family=Raleway:wght@100&display=swap" rel="stylesheet">
     <script src="jQuery.js"></script>
     <script src="client.js"></script>
     <link rel="stylesheet" href="style.css">
+    <!-- links for fonts -->
+    <!-- links for fonts -->
     <title>Employee Salary Calculator</title>
 </head>
+
 <body>
-    
-<h1>Salary Calculator</h1>
-    <h2>Add Employees</h2>   
+    <main>
+        <h1>Salary Calculator</h1>
+        <h2>Add Employees</h2>
 
         <!-- Inputs! -->
-        
+
         <!-- First Name -->
-        <label for="first-name" > First Name: </label>
-        <input type="text" id="first-name" class="inputs" placeholder="First Name" />
+        <label for="first-name"> First Name: </label>
+        <input type="text" id="first-name" class="inputs" placeholder="Your name.." />
 
         <!-- l=Last Name -->
         <label for="last-name"> Last Name: </label>
-        <input type="text" id="last-name" class="inputs" placeholder="Last Name" />
+        <input type="text" id="last-name" class="inputs" placeholder="Your last name.." />
 
         <!-- ID Number -->
         <label for="ID-Number"> ID Number: </label>
-        <input type="Number" id="ID-Number" class="inputs" placeholder="ID Number" />
-        
+        <input type="Number" id="ID-Number" class="inputs" placeholder="Your employee ID number.." />
+
         <!-- Job Title -->
         <label for="job-title"> Job Title: </label>
-        <input type="text" id="job-title" class="inputs" placeholder="Job Title" />
-        
+        <input type="text" id="job-title" class="inputs" placeholder="Your job title.." />
+
         <!-- Annual Salary -->
         <label for="annual-salary"> Annual Salary: </label>
-        <input type="Number" id="annual-salary" class="inputs" placeholder="Annual Salary" />
-      
+        <input type="Number" id="annual-salary" class="inputs" placeholder="Your annual salary.." />
+
 
         <!-- break for space below inputs and button -->
         <br>
 
-    <!-- Button! -->
+        <!-- Button! -->
         <button id='btn'>Submit</button>
 
-<h2>Employees</h2>
+        <h2>Employees</h2>
 
+        <!-- Table! -->
+        <table id="table">
+            <tr>
+                <th class ="tHeaderStyle" id="firstName">First Name</th>
+                <th class ="tHeaderStyle" id="lastName">Last Name</th>
+                <th class ="tHeaderStyle" id="IDnumber">Employee ID Number</th>
+                <th class ="tHeaderStyle" id="jobtitle">Job Title</th>
+                <th class ="tHeaderStyle" id="annualsalary">Annual Salary</th>
+                <th class ="tHeaderStyle" id="remove">...</th>
+            </tr>
+        </table>
 
-
-
-
-
-
-
-
-
-    <table id="table" border="1px">
-        <tr>
-            <th class="firstName">First Name</th>
-            <th class="lastName">Last Name</th>
-            <th class="IDnumber">Employee ID Number</th>
-            <th class="jobtitle">Job Title</th>
-            <th class="annual-salary">Annual Salary</th>
-            <th class="">...</th>
-        </tr>
-    </table>
+        
+        <p>Total Monthly:$<span id= "totalSpan">0</span></p>
+        
+    </main>
 </body>
 </html>

@@ -1,7 +1,131 @@
-#table {
- width: 100%;
+body {
+    padding: 5px 20%;
+    background: radial-gradient(farthest-corner at bottom left, rgba(23, 35, 116, 0.8) 15%, transparent), radial-gradient(farthest-side at top left, rgba(0, 165, 156, 0.9), rgba(0, 165, 156, 0.8) 30%, rgba(100, 19, 122, 0.7) 60%, transparent), radial-gradient(farthest-side at top right, rgba(100, 19, 122, 0.95), rgba(252, 0, 141, 0.8) 200px, transparent), radial-gradient(farthest-corner at bottom right, rgba(0, 165, 156, 0.8), rgba(0, 165, 156, 0.9) 20%, rgba(23, 35, 116, 0.9) 50%, transparent);
+    background-attachment: fixed;
+    opacity: 1;
+    z-index: -5;
+    height: 100%;
 }
 
+main {
+    background-color: white;
+    padding: 15px;
+    padding-top: 5px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+/* check out the table styling!! */
+#table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+#table td, #table th{
+    border: 1px solid #ddd;
+  padding: 8px;
+}
+.tHeaderStyle {
+     color: white;
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: rgba(23, 35, 116, 0.8);
+
+}
+
+#table tr:hover {
+    background-color: #ddd
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* check out the table styling!! */
+
+
+
+/* check out the input styling!! */
+
+.inputs {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+label {
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+.inputs[type=text]:focus {
+    border: 3px groove #555;
+  } 
+
+
+
+/* check out the input styling!! */
+
+
+/* check out the button styling!! */
 #btn {
     float: right;
+    padding: 10px 24px;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+#btn:hover {
+    background-color: rgb(228, 253, 227); 
+    color: rgba(23, 35, 116, 0.8);
+    border-radius: 3px;
+    
+  }
+
+
+.btnRemove {
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+.btnRemove:hover {
+    background-color: rgb(214, 215, 250); 
+    color: rgb(0, 0, 0);
+    border-radius: 3px;
+}
+
+/* check out the button styling!! */
+
+
+h1 {
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+h2{
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+#paragraph {
+   text-align: right;
+   
 }
