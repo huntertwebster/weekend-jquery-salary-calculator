@@ -1,6 +1,6 @@
 body {
     padding: 5px 20%;
-    background-size: cover;
+    background-size: fixed;
     background-image: url("/Users/hunterwebster/Documents/EDA/EDA Projects/tier2/week7 - JS Review/weekend-jquery-salary-calculator/assignment/background.jpg");
 }
 
@@ -22,6 +22,7 @@ main {
     font-family: 'Merriweather', serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
+
 }
 
 #table td, #table th{
@@ -71,7 +72,7 @@ label {
 
 
 /* check out the button styling!! */
-#btn {
+.btn {
     float: right;
     padding: 10px 24px;
     font-family: 'Merriweather', serif;
@@ -80,7 +81,7 @@ label {
     
 }
 
-#btn:hover {
+.btn:hover {
     background-color: rgb(240, 255, 240);
     border-radius: 4px;
     border-style: groove;

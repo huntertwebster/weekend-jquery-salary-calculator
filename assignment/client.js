@@ -1,87 +1,133 @@
+// declaring an array for the object of employees
+let employees = [
+    {
+        firstName: 'Jen',
+        lastName: 'Barber',
+        idNumber: '4521',
+        jobTitle: 'Team Lead',
+        annualSalary: 80000,
+    },
+    {
+        firstName: 'Maurice',
+        lastName: 'Moss',
+        idNumber: '8724',
+        jobTitle: 'Support Team',
+        annualSalary: 58000,
+    },
+    {
+        firstName: 'Roy',
+        lastName: 'Smith',
+        idNumber: '9623',
+        jobTitle: 'Quality Assurance',
+        annualSalary: 48000,
+    },
+];
+
+
+
 $().ready(function () {
     console.log('DOM is ready');
 
-    //Click handlers here!
+    //looping over the array and checkin to see how many will be displayed
+    for (let i = 0; i < employees.length; i++) {
+        console.log(employees[i]);
 
-    //adding row on click
-    $('#btn').on('click', '', addRow)
-    //removing row on click
-    $('#table').on('click', '.btnRemove', removeRow)
-    // adding up total Monthly
-    $('#btn').on('click', addMonthly)
-});
-
-
-// declaring an array for the object of employees
-let employees = [];
-
-
-//function to add rows to the table
-function addRow(event) {
-    console.log(event);
-
-    let newRow = {
-        firstName: $('#first-name').val(),
-        lastName: $('#last-name').val(),
-        idNumber: $('#ID-Number').val(),
-        jobTitle: $('#job-title').val(),
-        annualSalary: $('#annual-salary').val()
+        // this is give us a reusable function for every employee to pass in their information 
+        addRow(
+            employees[i].firstName,
+            employees[i].lastName,
+            employees[i].idNumber,
+            employees[i].jobTitle,
+            employees[i].annualSalary,
+        );
     }
 
 
-    //changing annualSalary to a number
-    
-    //adding row of objects to table
-    employees.push(newRow);
-    //adds the objects to the DOM inside the table
-    $('#table').append(`
+    // remove button, click event
+    $('#table').on('click', '.btnRemove', function (event) {
+        //finding the element that was clicked
+        let deleteRow = $(event.target);
+        // remove the employee row from the DOM
+        // use .closest to delete the first row that matches the line
+        deleteRow.closest('tr').remove();
+    });
 
-    <tr>
-        <td>${newRow.firstName} </td>
-        <td>${newRow.lastName} </td>
-        <td>#${newRow.idNumber} </td>
-        <td>${newRow.jobTitle} </td>
-        <td>$${newRow.annualSalary} </td>
-
-        <td>
-        <button class="btnRemove">Delete</button>
-        </td>
-    </tr>
-    `)
-
-
-    // clears the inputs after it is added to the table
-    $('#first-name').val('');
-    $('#last-name').val('');
-    $('#ID-Number').val('');
-    $('#job-title').val('');
-    $('#annual-salary').val('')
-}
-
-// function to remove the button upon a click event
-function removeRow(event) {
-    let clickedOn = $(event.target)
-    clickedOn.closest('tr').remove();
-}
+    function addRow(
+        firstName,
+        lastName,
+        idNumber,
+        jobTitle,
+        annualSalary
+    ) {
+        //adds the objects to the DOM inside the table
+        $('#table').append(`<tr>
+        <td>${firstName} </td>
+        <td>${lastName} </td>
+        <td>#${idNumber} </td>
+        <td>${jobTitle} </td>
+        <td>$${annualSalary} </td>
+        <td><button class="btnRemove">Delete</button></td>
+        </tr>`)
+    }
 
 
+    // submit button, click event
+    $('.btn').on('click', function () {
+        // grab from the form fields
+        // call addEmployee function
 
-// declare global variable totalSalary
-let totalMonthly = 0;
+        const firstName = $('#first-name').val();
+        const lastName = $('#last-name').val();
+        const idNumber = $('#ID-Number').val();
+        const jobTitle = $('#job-title').val();
+        const annualSalary = $('#annual-salary').val();
 
-// convert annualsalary to a number
-Number(employees.annualSalary);
-console.log(typeof $('#annual-salary'));
+        // use the exsisting function to push fields into employee array
+        addRow(
+            firstName,
+            lastName,
+            idNumber,
+            jobTitle,
+            annualSalary
+        );
+
+            // empty the values
+        $('#first-name').val('');
+        $('#last-name').val('');
+        $('#ID-Number').val('');
+        $('#job-title').val('');
+        $('#annual-salary').val('');
+
+        //push values to DOM
+        employees.push({
+            firstName: firstName,
+            lastName: lastName,
+            idNumber: idNumber,
+            jobTitle: jobTitle,
+            annualSalary: Number(annualSalary)
+
+            // some function that calcutates the salary + employee salary
+
+            
+        });
+    });
+});
 
 //function to add up annual salary to = total salary 
- 
-function addMonthly () {
-    let addedMonthly = 0 ;
-    totalMonthly = $('#annual-salary') + $('#annual-salary');
-    el = $('#totalSpan');
-    el.empty();
-    el.append(totalMonthly);
-    console.log(totalMonthly);
-}
 
-// console.log(annualSalary);
+// function addMonthly() {
+//     let totalMonthly = 0;
+//     totalMonthly = $('#annual-salary').val() + $('#annual-salary').val();
+//     el = $('#totalSpan');
+//     el.empty();
+//     el.append(totalMonthly);
+//     console.log(totalMonthly);
+// }
+
+// // console.log(annualSalary);
+
+// // function addMonthly () {
+// //     let totalMonthly = 0;
+
+// //     for (let i = 0; i < employees.length)
+// // }
