@@ -1,28 +1,33 @@
 // declaring an array for the object of employees
-let employees = [
-    {
-        firstName: 'Jen',
-        lastName: 'Barber',
-        idNumber: '4521',
-        jobTitle: 'Team Lead',
-        annualSalary: 80000,
-    },
-    {
-        firstName: 'Maurice',
-        lastName: 'Moss',
-        idNumber: '8724',
-        jobTitle: 'Support Team',
-        annualSalary: 58000,
-    },
-    {
-        firstName: 'Roy',
-        lastName: 'Smith',
-        idNumber: '9623',
-        jobTitle: 'Quality Assurance',
-        annualSalary: 48000,
-    },
-];
+// let employees = [
+//     {
+//         firstName: 'Jen',
+//         lastName: 'Barber',
+//         idNumber: '4521',
+//         jobTitle: 'Team Lead',
+//         annualSalary: 80000,
+//     },
+//     {
+//         firstName: 'Maurice',
+//         lastName: 'Moss',
+//         idNumber: '8724',
+//         jobTitle: 'Support Team',
+//         annualSalary: 58000,
+//     },
+//     {
+//         firstName: 'Roy',
+//         lastName: 'Smith',
+//         idNumber: '9623',
+//         jobTitle: 'Quality Assurance',
+//         annualSalary: 48000,
+//     },
+// ];
 
+
+
+
+let employees = [];
+let allMonthly = [];
 
 
 $().ready(function () {
@@ -38,7 +43,7 @@ $().ready(function () {
             employees[i].lastName,
             employees[i].idNumber,
             employees[i].jobTitle,
-            Number(employees[i].annualSalary),
+            employees[i].annualSalary,
         );
     }
 
@@ -52,13 +57,8 @@ $().ready(function () {
         deleteRow.closest('tr').remove();
     });
 
-    function addRow(
-        firstName,
-        lastName,
-        idNumber,
-        jobTitle,
-        annualSalary
-    ) {
+    function addRow(firstName, lastName, idNumber, jobTitle, annualSalary) {
+
         //adds the objects to the DOM inside the table
         $('#table').append(`<tr>
         <td>${firstName} </td>
@@ -68,8 +68,11 @@ $().ready(function () {
         <td>$${annualSalary} </td>
         <td><button class="btnRemove">Delete</button></td>
         </tr>`)
+        //pushing to all Monthly
+        allMonthly.push(annualSalary);
     }
 
+    console.log(allMonthly)    
 
     // submit button, click event
     $('.btn').on('click', function () {
@@ -80,15 +83,17 @@ $().ready(function () {
         const lastName = $('#last-name').val();
         const idNumber = $('#ID-Number').val();
         const jobTitle = $('#job-title').val();
-        const annualSalary = Number($('#annual-salary').val());
+        const annualSalary = $('#annual-salary').val();
 
+        
+           
         // use the exsisting function to push fields into employee array
         addRow(
             firstName,
             lastName,
             idNumber,
             jobTitle,
-            Number(annualSalary)
+            annualSalary
         );
 
         // empty the values
@@ -104,30 +109,43 @@ $().ready(function () {
             lastName: lastName,
             idNumber: idNumber,
             jobTitle: jobTitle,
-            annualSalary: Number(annualSalary),
-
-            // some function that calcutates the salary + employee salary
+            annualSalary: annualSalary,
 
             
         });
+        addMonthly();
     });
+    
 });
 
+console.log(allMonthly)
 
-
+//declare global variable for totalmonthly 
 let totalMonthly = 0;
 
+
 function addMonthly() {
-    totalMonthly += employees[i].annualSalary;
+    totalMonthly = 0;
+
+    // loop and get values from allMonthly
+    for (let i = 0; i < allMonthly.length; i++) {
+     totalMonthly += Number(allMonthly[i]) / 12 ;  
+    }
+
+    let roundedMonthly = Math.ceil(totalMonthly)
     let el = $('#totalSpan');
     el.empty();
-    el.append(totalMonthly);
-    console.log(totalMonthly);
-}
-console.log(employee[i].annualSalary);
+    el.append(roundedMonthly);
+    console.log(roundedMonthly);
 
-if (totalMonthly > 20000) {
-    $('#totalSpan').css('background-color', 'red');
+    //if over 20k, make the text red!
+    if (totalMonthly > 20000) {
+        $('#totalSpan').css('color', 'red');
+    }
 }
+
+
+
+
 
 
