@@ -110,56 +110,24 @@ $().ready(function () {
 
             
         });
-
-        
-        
     });
-
-
-    
 });
 
 
 
-
-
-
-
-
-//function to add up annual salary to = total salary 
-
-// function addMonthly() {
-//     let totalMonthly = 0;
-//     totalMonthly = $('#annual-salary').val() + $('#annual-salary').val();
-//     el = $('#totalSpan');
-//     el.empty();
-//     el.append(totalMonthly);
-//     console.log(totalMonthly);
-// }
-
-// // console.log(annualSalary);
-
-// // function addMonthly () {
-// //     let totalMonthly = 0;
-
-// //     for (let i = 0; i < employees.length)
-// // }
 let totalMonthly = 0;
+
 function addMonthly() {
-    
-    for (let i = 0; i < employees.length; i++) {
-    totalMonthly += Number(employees[i].annualSalary) / 12;
-    }
-    console.log(Math.ceil(totalMonthly * 100) )
-}//end for loop
-
-console.log(totalMonthly + 100); // test
-let monthlyDisplay = $('#totalSpan');
-monthlyDisplay.empty(totalMonthly);
-monthlyDisplay.append(totalMonthly);
-
+    totalMonthly += employees[i].annualSalary;
+    let el = $('#totalSpan');
+    el.empty();
+    el.append(totalMonthly);
+    console.log(totalMonthly);
+}
+console.log(employee[i].annualSalary);
 
 if (totalMonthly > 20000) {
     $('#totalSpan').css('background-color', 'red');
 }
+
 
